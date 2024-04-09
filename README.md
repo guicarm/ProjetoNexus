@@ -12,6 +12,14 @@
     <a href="#-funcionalidades">Funcionalidades</a>
 </p>
 
+<h3> Integrantes </h3>
+
+- Matheus O.A.C da Silva - RM 98502
+- Amorgan M. Lopes - RM 98552
+- Guilherme - RM 98874
+- Gustavo - RM 99585
+- Erick - RM 550371
+
 <br/>
 
 <div align="center">
