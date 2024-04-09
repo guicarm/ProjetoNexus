@@ -37,6 +37,7 @@
 
 - [x] Sistema de login/cadastro totalmente funcional.
 - [x] Lidar com o tipo de usuário (usuário/funcionário).
+      
+<br/><hr/>
 
-----------------------------------------------------------------------------------------------------------------------
 ## 📈 Diagramas 
