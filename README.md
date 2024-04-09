@@ -12,7 +12,7 @@
     <a href="#-funcionalidades">Funcionalidades</a>
 </p>
 
-### [Vídeo PITCH de apresentação do projeto](https://www.youtube.com) (Falta o Link do Pitch)
+<p align="center"> <a href="https://www.youtube.com">Vídeo PITCH de apresentação do projeto</a> falta o link ainda </p>
 
 <h3>Integrantes</h3>
 
