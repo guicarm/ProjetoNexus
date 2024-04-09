@@ -14,11 +14,11 @@
 
 <h3> Integrantes </h3>
 
-- Matheus O.A.C da Silva - RM 98502
+- Matheus O.A.C Silva - RM 98502
 - Amorgan M. Lopes - RM 98552
-- Guilherme - RM 98874
-- Gustavo - RM 99585
-- Erick - RM 550371
+- Guilherme C. de Matos - RM 98874
+- Gustavo G. da Silva - RM 99585
+- Erick K. da Silva - RM 550371
 
 <br/>
 
