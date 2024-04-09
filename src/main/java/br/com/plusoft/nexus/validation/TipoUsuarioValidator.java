@@ -7,7 +7,7 @@ public class TipoUsuarioValidator implements ConstraintValidator<TipoUsuario, St
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        return value.equals("UsuarioComum") || value.equals("ADM");
+        return value.equals("cliente") || value.equals("funcionario");
     }
 
 }
