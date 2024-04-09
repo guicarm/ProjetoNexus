@@ -28,7 +28,7 @@
 <h4>Pré-requisitos</h4> 
 
 - [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/downloads/#java11) instalado em seu sistema.
-- [Visual Studio Code (VSCode)](code.visualstudio.com) instalado em seu sistema.
+- [Visual Studio Code (VSCode)](https://code.visualstudio.com) instalado em seu sistema.
 
 <h4>Passos para Executar a Aplicação</h4> 
 
