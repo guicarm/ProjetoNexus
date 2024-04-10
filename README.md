@@ -1,7 +1,4 @@
 <div align="center">
-    <p>
-        <a href="./README.md">Português</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    </p>
     <h2>⚜️ N E X U S ⚜️</h2>
 </div>
 
