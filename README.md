@@ -51,7 +51,7 @@ git clone https://github.com/guicarm/ProjetoNexus
 
 - [Spring](https://spring.io)
 - [Docker](https://www.docker.com/)
-- [Figma]() falta o link
+- [Figma](https://www.figma.com/file/d5rDjubNjdvIn1madq8DZd/Challenge?type=design&node-id=0%3A1&mode=design&t=9i6UZdLvgFCGnHWx-1)
 
 <br/>
 
@@ -234,3 +234,168 @@ Altera informações do usuário.
 | 400    | Requisição inválida, como dados de entrada ausentes ou mal formatados. |
 
 <hr/>
+
+## 📃 Documentação da API - Produtos
+
+### 💠 CRUD de produtos
+
+`POST` /funcionario/produto
+
+Adiciona um novo produto no estoque.
+
+#### Requisição
+
+```js
+{
+    tipo: "Refrigerante",
+    nome: "Pepsi",
+    marca: "Pepsico",
+    modelo: "2L",
+    quantidade: 200,
+    descricao: "Garrafa de 2 litros Pepsi Twist sabor limão",
+    valor: 9.0
+}
+```
+
+#### Resposta - sucesso
+
+```js
+{
+  message: "Produto adicionado com sucesso.";
+}
+```
+
+#### Resposta - erro
+
+```js
+{
+    error: "Erro ao adicionar o produto.",
+    message: "Ocorreu um erro ao adicionar o produto."
+}
+```
+
+#### Códigos de Status
+
+| código | descrição                                                              |
+| ------ | ---------------------------------------------------------------------- |
+| 201    | Produto adicionado com sucesso.                                        |
+| 400    | Requisição inválida, como dados de entrada ausentes ou mal formatados. |
+
+<br/>
+
+`PUT` /funcionario/produto/{id}
+
+Edita um produto no estoque.
+
+#### Requisição
+
+```js
+{
+    tipo: "Refrigerante",
+    nome: "Pepsi Black",
+    marca: "Pepsico",
+    modelo: "Lata",
+    quantidade: 300,
+    descricao: "Refrigerante lata Pepsi black",
+    valor: 5.50
+}
+```
+
+#### Resposta - sucesso
+
+```js
+{
+  message: "Produto atualizado com sucesso.";
+}
+```
+
+#### Resposta - erro
+
+```js
+{
+    error: "Erro ao atualizar o produto.",
+    message: "Ocorreu um erro ao atualizar o produto."
+}
+```
+
+#### Códigos de Status
+
+| código | descrição                                                              |
+| ------ | ---------------------------------------------------------------------- |
+| 200    | Produto atualizado com sucesso.                                        |
+| 400    | Requisição inválida, como dados de entrada ausentes ou mal formatados. |
+| 404    | Produto referente ao `{id}` não encontrado.                            |
+
+<br/>
+
+`GET` /funcionario/produto/{id}
+
+Mostra os detalhes do produto com o `id` informado no path.
+
+### Requisição - via id
+
+### Resposta - sucesso
+
+```js
+// GET/funcionario/produto/1
+{
+  tipo: "Refrigerante",
+  nome: "Pepsi Black",
+  marca: "Pepsico",
+  modelo: "Lata",
+  quantidade: 300,
+  descricao: "Refrigerante lata Pepsi black",
+  valor: 5.50
+}
+```
+
+#### Resposta - erro
+
+```js
+{
+    error: "Erro ao encontrar o produto.",
+    message: "Ocorreu um erro ao encontrar o produto."
+}
+```
+
+#### Códigos de Status
+
+|código|descrição
+|------|---------
+|200| Produto retornada com sucesso
+|401| Não autenticado. Se autentique em /login
+|403| Não autorizado. Esse produto não pertence ao usuário autenticado
+|404| Não existe produto com o `id` informado
+---
+
+<br/>
+
+`DELETE` /funcionario/produto/{id}
+
+Deleta um produto do estoque.
+
+#### Requisição - via id
+
+#### Resposta - sucesso
+
+```js
+{
+  message: "Produto excluído com sucesso.";
+}
+```
+
+#### Resposta - erro
+
+```js
+{
+    error: "Erro ao deletar o produto.",
+    message: "Ocorreu um erro ao deletar o produto."
+}
+```
+
+#### Códigos de Status
+
+| código | descrição                                   |
+| ------ | ------------------------------------------- |
+| 204    | Produto excluído com sucesso.               |
+| 404    | Produto referente ao `{id}` não encontrado. |
