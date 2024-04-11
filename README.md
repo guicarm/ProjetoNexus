@@ -50,6 +50,8 @@ git clone https://github.com/guicarm/ProjetoNexus
 ## 🖥 Tecnologias
 
 - [Spring](https://spring.io)
+- [Docker](https://www.docker.com/)
+- [Figma]() falta o link
 
 <br/>
 
