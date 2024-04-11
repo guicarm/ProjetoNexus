@@ -68,6 +68,25 @@ git clone https://github.com/guicarm/ProjetoNexus
 
 <br/>
 
+## 📃 Documentação da API
+
+### Endpoints 
+
+- [Autentificação de Usuário](#autentificação-de-usuário)
+- [Registro de Usuário](#registro-de-usuário)
+- [Obtenção de Usuário](#obtenção-de-usuário)
+- [Alteração de Usuário](#alteração-de-usuário)
+- [Deletar Usuário](#deletar-usuário)
+
+<br/>
+
+- [Adicionar Produtos](#adiciona-um-produto)
+- [Edita um Produto](#edita-um-produto)
+- [Detalha um Produto](#detalha-um-produto)
+- [Deleta um Produto](#deleta-um-produto)
+
+<br/>
+
 ## 📃 Documentação da API - Usuários
 
 ### 💠 Autenticação de Usuário
