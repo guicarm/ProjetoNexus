@@ -59,6 +59,8 @@ git clone https://github.com/guicarm/ProjetoNexus
 
 - [x] Sistema de login/cadastro totalmente funcional.
 - [x] Lidar com o tipo de usuário (usuário/funcionário).
+- [x] CRUD de usuários.
+- [x] CRUD de produtos.
       
 <br/>
 
@@ -153,7 +155,7 @@ Cadastra um usuário no sistema
 
 <hr/>
 
-### 💠 Atualização das Informações do Usuário
+### 💠 Obtenção de Usuário
 
 `GET` /usuario
 
@@ -187,6 +189,8 @@ Obtém as informações do usuário.
 | 401    | Configurações de usuário não encontradas . |
 
 <br/>
+
+### 💠 Alteração de Usuário
 
 `PUT` /usuario
 
@@ -237,7 +241,7 @@ Altera informações do usuário.
 
 ## 📃 Documentação da API - Produtos
 
-### 💠 CRUD de produtos
+### 💠 Adiciona um produto
 
 `POST` /funcionario/produto
 
@@ -282,6 +286,8 @@ Adiciona um novo produto no estoque.
 | 400    | Requisição inválida, como dados de entrada ausentes ou mal formatados. |
 
 <br/>
+
+### 💠 Edita um produto
 
 `PUT` /funcionario/produto/{id}
 
@@ -328,6 +334,8 @@ Edita um produto no estoque.
 
 <br/>
 
+### 💠 Detalha um produto
+
 `GET` /funcionario/produto/{id}
 
 Mostra os detalhes do produto com o `id` informado no path.
@@ -369,6 +377,8 @@ Mostra os detalhes do produto com o `id` informado no path.
 ---
 
 <br/>
+
+### 💠 Deleta um produto
 
 `DELETE` /funcionario/produto/{id}
 
