@@ -5,7 +5,8 @@
 <p align="center">
     <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#-funcionalidades">Funcionalidades</a>
+    <a href="#-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#-diagrama">Diagrama</a>
 </p>
 
 <p align="center"> <a href="https://www.youtube.com">Vídeo PITCH de apresentação do projeto</a> falta o link ainda </p>
@@ -64,7 +65,11 @@ git clone https://github.com/guicarm/ProjetoNexus
       
 <br/>
 
-## 📈 Diagramas 
+## 📈 Diagrama
+
+<div>
+    <img src="./Diagrama/Diagrama de Java.png" alt="Diagrama de classes" height="400px"/>
+</div>
 
 <br/>
 
