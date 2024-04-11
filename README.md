@@ -258,6 +258,40 @@ Altera informações do usuário.
 
 <hr/>
 
+### 💠 Deletar Usuário
+
+`DELETE` /usuario/{id}
+
+Deleta um usuário
+
+### Requisição - via id
+
+#### Resposta - sucesso
+
+```js
+{
+  message: "Usuário excluído com sucesso.";
+}
+```
+
+#### Resposta - erro
+
+```js
+{
+    error: "Erro ao deletar o usuário.",
+    message: "Ocorreu um erro ao deletar o usuário."
+}
+```
+
+#### Códigos de Status
+
+| código | descrição                                   |
+| ------ | ------------------------------------------- |
+| 204    | Usuário excluído com sucesso.               |
+| 404    | Usuário referente ao `{id}` não encontrado. |
+
+<hr/>
+
 ## 📃 Documentação da API - Produtos
 
 ### 💠 Adiciona um produto
