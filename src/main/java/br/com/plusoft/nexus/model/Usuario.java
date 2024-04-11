@@ -12,7 +12,6 @@ import lombok.Data;
 
 @Entity
 @Data
-// TODO Atributo Endereco endereco;
 public class Usuario {
     
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
