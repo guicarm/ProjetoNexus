@@ -301,7 +301,7 @@ Deleta um usuário
 
 ### 💠 Adiciona um produto
 
-`POST` /funcionario/produto
+`POST` /produto
 
 Adiciona um novo produto no estoque.
 
@@ -347,7 +347,7 @@ Adiciona um novo produto no estoque.
 
 ### 💠 Edita um produto
 
-`PUT` /funcionario/produto/{id}
+`PUT` /produto/{id}
 
 Edita um produto no estoque.
 
@@ -394,7 +394,7 @@ Edita um produto no estoque.
 
 ### 💠 Detalha um produto
 
-`GET` /funcionario/produto/{id}
+`GET` /produto/{id}
 
 Mostra os detalhes do produto com o `id` informado no path.
 
@@ -438,7 +438,7 @@ Mostra os detalhes do produto com o `id` informado no path.
 
 ### 💠 Deleta um produto
 
-`DELETE` /funcionario/produto/{id}
+`DELETE` /produto/{id}
 
 Deleta um produto do estoque.
 
