@@ -1,8 +1,8 @@
 package br.com.plusoft.nexus.controller;
 
 import static org.springframework.http.HttpStatus.CREATED;
-import static org.springframework.http.HttpStatus.NO_CONTENT;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
+import static org.springframework.http.HttpStatus.NO_CONTENT;
 
 import java.util.List;
 
@@ -21,6 +21,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import br.com.plusoft.nexus.model.Produto;
 import br.com.plusoft.nexus.repository.ProdutoRepository;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
  
  
@@ -43,7 +44,7 @@ public class ProdutoController {
     // ========== POST(Cadastrar Produto) ============
     @PostMapping
     @ResponseStatus(CREATED)
-    public Produto create(@RequestBody Produto produto){
+    public Produto create(@RequestBody @Valid Produto produto){
         log.info("Produto Cadastrado {}", produto);
         return repository.save(produto);
     }
