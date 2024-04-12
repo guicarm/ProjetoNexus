@@ -25,7 +25,7 @@ import lombok.extern.slf4j.Slf4j;
  
  
 @RestController
-@RequestMapping("/produto")
+@RequestMapping("produto")
 @Slf4j
 public class ProdutoController {
    
@@ -73,7 +73,7 @@ public class ProdutoController {
  
  
     // ========== PUT (Atualizar Produto) ============
-    @PutMapping({"id"})
+    @PutMapping("{id}")
     public Produto update(@PathVariable Long id, @RequestBody Produto produto){
         log.info("Atualizando produto {} para {}", id, produto);
  
