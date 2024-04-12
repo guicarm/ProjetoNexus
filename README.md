@@ -19,6 +19,10 @@
 - Gustavo G. da Silva - RM 99585
 - Erick K. da Silva - RM 550371
 
+## 🌐 Arquivo JSON Insomnia 
+
+[Insomnia](./documents/Insomnia_2024-04-11.json)
+
 --------------------------------------------------
 <h3>Como Rodar a Aplicação </h3>
 
@@ -35,11 +39,6 @@ git clone https://github.com/guicarm/ProjetoNexus
 ```
 
 --------------------------------------------------
-
-
-<div align="center">
-    <img src="./public/readme.gif" alt="project gif" height="400px"/>
-</div>
 
 ## 📚 Projeto 
 
@@ -68,7 +67,7 @@ git clone https://github.com/guicarm/ProjetoNexus
 ## 📈 Diagrama
 
 <div>
-    <img src="./Diagrama/Diagrama de Java.png" alt="Diagrama de classes" height="400px"/>
+    <img src="./documents/Diagrama de Java.png" alt="Diagrama de classes" height="400px"/>
 </div>
 
 <br/>
