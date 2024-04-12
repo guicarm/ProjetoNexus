@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Size;
@@ -41,7 +42,7 @@ public class Produto {
     @Size(max = 255, message="{produto.descricao.size}")
     private String descricao;
 
-    @NotBlank(message = "{produto.valor.notblank}")
+    @NotNull(message = "{produto.valor.notnull}")
     @Positive(message="{produto.valor.positive}")
     private double valor;
     
