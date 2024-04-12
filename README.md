@@ -6,8 +6,7 @@
     <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#-diagrama">Diagrama</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#-insomnia">Insomnia</a>
+    <a href="#-diagrama">Diagrama</a>
 </p>
 
 <p align="center"> <a href="https://www.youtube.com">Vídeo PITCH de apresentação do projeto</a> falta o link ainda </p>
@@ -70,7 +69,7 @@ git clone https://github.com/guicarm/ProjetoNexus
 
 <br/>
 
-## 🌐 [Insomnia](./documents/Insomnia_2024-04-11.json) 🌐
+## 🌐 [Arquivo JSON Insomnia](./documents/Insomnia_2024-04-11.json) 🌐
 
 <br/>
 
