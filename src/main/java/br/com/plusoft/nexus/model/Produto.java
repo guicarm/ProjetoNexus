@@ -34,7 +34,7 @@ public class Produto {
     @Size(max = 255, message="{produto.modelo.size}")
     private String modelo;
 
-    @NotBlank(message = "{produto.quantidade.notblank}")
+    @NotNull(message = "{produto.quantidade.notnull}")
     @PositiveOrZero(message="{produto.quantidade.positiveorzero}")
     private int quantidade;
 
