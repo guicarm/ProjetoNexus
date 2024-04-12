@@ -74,7 +74,7 @@ public class UsuarioController {
  
  
     // ========== PUT (Atualizar Usuario) ============
-    @PutMapping({"id"})
+    @PutMapping("{id}")
     public Usuario update(@PathVariable Long id, @RequestBody Usuario usuario){
         log.info("Atualizando usuario {} para {}", id, usuario);
  
@@ -84,7 +84,6 @@ public class UsuarioController {
  
     }
  
-
 
 
   // ==== MÉTODO VERIFICAR SE USUARIO EXISTE ========
