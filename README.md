@@ -19,10 +19,6 @@
 - Gustavo G. da Silva - RM 99585
 - Erick K. da Silva - RM 550371
 
-## 🌐 Arquivo JSON Insomnia 
-
-[Insomnia](./documents/Insomnia_2024-04-11.json)
-
 --------------------------------------------------
 <h3>Como Rodar a Aplicação </h3>
 
@@ -52,6 +48,7 @@ git clone https://github.com/guicarm/ProjetoNexus
 - [Spring](https://spring.io)
 - [Docker](https://www.docker.com/)
 - [Figma](https://www.figma.com/file/d5rDjubNjdvIn1madq8DZd/Challenge?type=design&node-id=0%3A1&mode=design&t=9i6UZdLvgFCGnHWx-1)
+- [Insomnia](https://insomnia.rest/download)
 
 <br/>
 
@@ -69,6 +66,10 @@ git clone https://github.com/guicarm/ProjetoNexus
 <div>
     <img src="./documents/Diagrama de Java.png" alt="Diagrama de classes" height="400px"/>
 </div>
+
+<br/>
+
+## 🌐 [Arquivo JSON Insomnia](./documents/Insomnia_2024-04-11.json) 🌐
 
 <br/>
 
