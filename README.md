@@ -19,6 +19,13 @@
 - Gustavo G. da Silva - RM 99585
 - Erick K. da Silva - RM 550371
 
+### Atribuições
+- Guilherme: Java e .NET
+- Amorgan: SQL e .NET
+- Erick: Mobile e .NET
+- Gustavo: DevOps e .NET
+- Matheus: QA, Disruptive Technologies IOT e .NET
+
 --------------------------------------------------
 <h3>Como Rodar a Aplicação </h3>
 
