@@ -9,7 +9,7 @@
     <a href="#-diagrama">Diagrama</a>
 </p>
 
-<p align="center"> <a href="https://www.youtube.com">Vídeo PITCH de apresentação do projeto</a> falta o link ainda </p>
+<p align="center"> <a href="https://youtu.be/e6-Bkei8G5M?si=_ofCC3A79gf6vVgP">Vídeo PITCH de apresentação do projeto</a> falta o link ainda </p>
 
 <h3>Integrantes</h3>
 
