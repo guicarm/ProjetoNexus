@@ -29,6 +29,6 @@ public class Usuario {
     private String senha;
 
     @TipoUsuario
-    private String tipo;
+    private String tipo; // Cliente e/ou Funcionário
 
 }
