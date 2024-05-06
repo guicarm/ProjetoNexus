@@ -71,7 +71,7 @@ git clone https://github.com/guicarm/ProjetoNexus
 ## 📈 Diagrama
 
 <div>
-    <img src="./documents/Diagrama de Java.png" alt="Diagrama de classes" height="400px"/>
+    <img src="./documents/Diagrama de Classes.png" alt="Diagrama de classes" height="400px"/>
 </div>
 
 <br/>
