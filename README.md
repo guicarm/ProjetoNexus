@@ -26,6 +26,20 @@
 - Gustavo: DevOps e .NET
 - Matheus: QA, Disruptive Technologies IOT e .NET
 
+<br>
+
+<h3> Endpoints de documentação </h3>
+
+- [Link para o Banco de dados H2](localhost:8080/database):
+```
+localhost:8080/database
+```
+
+- [Link para a documentação Swagger do projeto](localhost:8080/docs):
+```
+localhost:8080/docs
+```
+
 --------------------------------------------------
 <h3>Como Rodar a Aplicação </h3>
 
