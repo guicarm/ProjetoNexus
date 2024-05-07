@@ -65,6 +65,9 @@ git clone https://github.com/guicarm/ProjetoNexus
 - [x] Lidar com o tipo de usuário (usuário/funcionário).
 - [x] CRUD de usuários.
 - [x] CRUD de produtos.
+- [x] CRUD de API's.
+- [x] CRUD de empresas.
+- [x] CRUD de Chatbots.
       
 <br/>
 
