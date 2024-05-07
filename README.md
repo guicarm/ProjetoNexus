@@ -87,11 +87,11 @@ git clone https://github.com/guicarm/ProjetoNexus
 
 ### Endpoints 
 
-- [Autentificação de Usuário](#autentificação-de-usuário)
-- [Registro de Usuário](#registro-de-usuário)
-- [Obtenção de Usuário](#obtenção-de-usuário)
-- [Alteração de Usuário](#alteração-de-usuário)
-- [Deletar Usuário](#deletar-usuário)
+- [Autentificação de Usuário](#💠autenticação-de-usuário)
+- [Registro de Usuário](#💠registro-de-usuário)
+- [Obtenção de Usuário](#💠obtenção-de-usuário)
+- [Alteração de Usuário](#💠alteração-de-usuário)
+- [Deletar Usuário](#💠deletar-usuário)
 
 <br/>
 
