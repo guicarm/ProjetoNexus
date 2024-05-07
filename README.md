@@ -62,11 +62,11 @@ git clone https://github.com/guicarm/ProjetoNexus
 ## 🧾 Funcionalidades
 
 - [x] Sistema de login/cadastro totalmente funcional.
-- [x] Lidar com o tipo de usuário (usuário/funcionário).
+- [x] Lidar com o tipo de usuário (cliente/funcionário).
 - [x] CRUD de usuários.
 - [x] CRUD de produtos.
 - [x] CRUD de API's.
-- [x] CRUD de empresas.
+- [x] CRUD de Empresas.
 - [x] CRUD de Chatbots.
       
 <br/>
