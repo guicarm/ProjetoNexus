@@ -21,12 +21,17 @@ import org.springframework.web.server.ResponseStatusException;
 
 import br.com.plusoft.nexus.model.Empresa;
 import br.com.plusoft.nexus.repository.EmpresaRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("empresa")
 @Slf4j
+@Tag(name = "Empresas")
 public class EmpresaController {
    
  
@@ -35,6 +40,10 @@ public class EmpresaController {
    
 // ========== GET(Listar Empresa) ============
     @GetMapping
+    @Operation(
+        summary = "Listar Empresas",
+        description = "Retorna um array com todas as empresas registradas."
+    )
     public List<Empresa> index(){
         return repository.findAll();
     }
@@ -44,14 +53,26 @@ public class EmpresaController {
     // ========== POST(Cadastrar Empresa) ============
     @PostMapping
     @ResponseStatus(CREATED)
+    @Operation(
+        summary = "Cadastrar Empresas",
+        description = "Cadastra uma empresa especificada através de seu ID."
+    )
+    @ApiResponses({
+        @ApiResponse(responseCode = "201", description = "Empresa criada com sucesso."),
+        @ApiResponse(responseCode = "400", description = "Validação falhou. Verifique o corpo da requisição.")
+    })
     public Empresa create(@RequestBody @Valid Empresa empresa){
-        log.info("Empresa Cadastrado {}", empresa);
+        log.info("Empresa Cadastrada {}", empresa);
         return repository.save(empresa);
     }
  
  
     // ========== GET(Detalhar Empresa) ============
     @GetMapping("{id}")
+    @Operation(
+        summary = "Detalhar Empresas",
+        description = "Detalha uma empresa especificada através de seu ID."
+    )
     public ResponseEntity<Empresa> show(@PathVariable Long id){
         log.info("buscando Empresa com id {}", id);
  
@@ -64,6 +85,10 @@ public class EmpresaController {
     // ========== DELETE (Excluir Empresa) ============
     @DeleteMapping("{id}")
     @ResponseStatus(NO_CONTENT)
+    @Operation(
+        summary = "Excluir Empresas",
+        description = "Exclui uma empresa especificada através de seu ID."
+    )
     public void destroy(@PathVariable Long id){
         log.info("Empresa apagada {}.", id);
  
@@ -75,6 +100,10 @@ public class EmpresaController {
  
     // ========== PUT (Atualizar Empresa) ============
     @PutMapping("{id}")
+    @Operation(
+        summary = "Atualizar Empresas",
+        description = "Atualiza uma empresa especificada através de seu ID."
+    )
     public Empresa update(@PathVariable Long id, @RequestBody Empresa empresa){
         log.info("Atualizando Empresa {} para {}", id, empresa);
  

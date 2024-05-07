@@ -21,12 +21,17 @@ import org.springframework.web.server.ResponseStatusException;
 
 import br.com.plusoft.nexus.model.Usuario;
 import br.com.plusoft.nexus.repository.UsuarioRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("usuario")
 @Slf4j
+@Tag(name = "Usuários")
 public class UsuarioController {
    
  
@@ -36,6 +41,10 @@ public class UsuarioController {
 
     // ========== GET(Listar Usuarios) ============
     @GetMapping
+    @Operation(
+        summary = "Listar Usuários",
+        description = "Retorna um array com todos usuários registrados."
+    )
     public List<Usuario> index(){
         return repository.findAll();
     }
@@ -44,6 +53,14 @@ public class UsuarioController {
     // ========== POST(Cadastrar Usuario) ============
     @PostMapping
     @ResponseStatus(CREATED)
+    @Operation(
+        summary = "Cadastrar Usuários",
+        description = "Cadastra um usuário especificado através de seu ID."
+    )
+    @ApiResponses({
+        @ApiResponse(responseCode = "201", description = "Usuário criado com sucesso."),
+        @ApiResponse(responseCode = "400", description = "Validação falhou. Verifique o corpo da requisição.")
+    })
     public Usuario create(@RequestBody @Valid Usuario usuario){
         log.info("Usuario Cadastrado {}", usuario);
         return repository.save(usuario);
@@ -52,6 +69,10 @@ public class UsuarioController {
  
     // ========== GET(Detalhar Usuario) ============
     @GetMapping("{id}")
+    @Operation(
+        summary = "Detalhar Usuários",
+        description = "Detalha um usuário especificado através de seu ID."
+    )
     public ResponseEntity<Usuario> show(@PathVariable Long id){
         log.info("buscando usuario com id {}", id);
  
@@ -61,9 +82,14 @@ public class UsuarioController {
                             .orElse(ResponseEntity.notFound().build());
     }
  
+
     // ========== DELETE (Excluir Usuario) ============
     @DeleteMapping("{id}")
     @ResponseStatus(NO_CONTENT)
+    @Operation(
+        summary = "Excluir Usuários",
+        description = "Exclui um usuário especificado através de seu ID."
+    )
     public void destroy(@PathVariable Long id){
         log.info("Usuario apagado {}.", id);
  
@@ -75,6 +101,10 @@ public class UsuarioController {
  
     // ========== PUT (Atualizar Usuario) ============
     @PutMapping("{id}")
+    @Operation(
+        summary = "Atualizar Usuários",
+        description = "Atualiza um usuário especificado através de seu ID."
+    )
     public Usuario update(@PathVariable Long id, @RequestBody Usuario usuario){
         log.info("Atualizando usuario {} para {}", id, usuario);
  

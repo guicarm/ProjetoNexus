@@ -21,12 +21,17 @@ import org.springframework.web.server.ResponseStatusException;
 
 import br.com.plusoft.nexus.model.Api;
 import br.com.plusoft.nexus.repository.ApiRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("api")
 @Slf4j
+@Tag(name = "API's")
 public class ApiController {
    
  
@@ -34,6 +39,10 @@ public class ApiController {
     ApiRepository repository;
    
 // ========== GET(Listar API) ============
+    @Operation(
+        summary = "Listar API's",
+        description = "Retorna um array com todas as API's registradas."
+    )
     @GetMapping
     public List<Api> index(){
         return repository.findAll();
@@ -44,14 +53,26 @@ public class ApiController {
     // ========== POST(Cadastrar API) ============
     @PostMapping
     @ResponseStatus(CREATED)
+    @Operation(
+        summary = "Cadastrar API's",
+        description = "Cadastra uma API através de um request body."
+    )
+    @ApiResponses({
+        @ApiResponse(responseCode = "201", description = "API criada com sucesso."),
+        @ApiResponse(responseCode = "400", description = "Validação falhou. Verifique o corpo da requisição.")
+    })
     public Api create(@RequestBody @Valid Api api){
-        log.info("API Cadastrado {}", api);
+        log.info("API Cadastrada {}", api);
         return repository.save(api);
     }
  
  
     // ========== GET(Detalhar API) ============
     @GetMapping("{id}")
+    @Operation(
+        summary = "Detalhar API's",
+        description = "Retorna uma API especificada através de seu ID."
+    )
     public ResponseEntity<Api> show(@PathVariable Long id){
         log.info("buscando API com id {}", id);
  
@@ -64,6 +85,10 @@ public class ApiController {
     // ========== DELETE (Excluir API) ============
     @DeleteMapping("{id}")
     @ResponseStatus(NO_CONTENT)
+    @Operation(
+        summary = "Deletar API's",
+        description = "Deleta uma API especificada através de seu ID."
+    )
     public void destroy(@PathVariable Long id){
         log.info("API apagada {}.", id);
  
@@ -75,6 +100,10 @@ public class ApiController {
  
     // ========== PUT (Atualizar API) ============
     @PutMapping("{id}")
+    @Operation(
+        summary = "Atualizar API's",
+        description = "Atualiza uma API especificada através de seu ID."
+    )
     public Api update(@PathVariable Long id, @RequestBody Api api){
         log.info("Atualizando Api {} para {}", id, api);
  

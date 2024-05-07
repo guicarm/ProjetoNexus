@@ -21,12 +21,17 @@ import org.springframework.web.server.ResponseStatusException;
 
 import br.com.plusoft.nexus.model.Chatbot;
 import br.com.plusoft.nexus.repository.ChatbotRepository;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("chatbot")
 @Slf4j
+@Tag(name = "Chatbots")
 public class ChatbotController {
    
  
@@ -35,6 +40,10 @@ public class ChatbotController {
    
 // ========== GET(Listar Chatbot) ============
     @GetMapping
+    @Operation(
+        summary = "Listar Chatbots",
+        description = "Retorna um array com todos os chatbots registrados."
+    )
     public List<Chatbot> index(){
         return repository.findAll();
     }
@@ -44,6 +53,14 @@ public class ChatbotController {
     // ========== POST(Cadastrar Chatbot) ============
     @PostMapping
     @ResponseStatus(CREATED)
+    @Operation(
+        summary = "Cadastrar Chatbots",
+        description = "Cadastra um chatbot especificado através de seu ID."
+    )
+    @ApiResponses({
+        @ApiResponse(responseCode = "201", description = "Chatbot criado com sucesso."),
+        @ApiResponse(responseCode = "400", description = "Validação falhou. Verifique o corpo da requisição.")
+    })
     public Chatbot create(@RequestBody @Valid Chatbot chatbot){
         log.info("Chatbot Cadastrado {}", chatbot);
         return repository.save(chatbot);
@@ -52,6 +69,10 @@ public class ChatbotController {
  
     // ========== GET(Detalhar Chatbot) ============
     @GetMapping("{id}")
+    @Operation(
+        summary = "Detalhar Chatbots",
+        description = "Detalha uma chatbot especificado através de seu ID."
+    )
     public ResponseEntity<Chatbot> show(@PathVariable Long id){
         log.info("buscando Chatbot com id {}", id);
  
@@ -64,6 +85,10 @@ public class ChatbotController {
     // ========== DELETE (Excluir Chatbot) ============
     @DeleteMapping("{id}")
     @ResponseStatus(NO_CONTENT)
+    @Operation(
+        summary = "Excluir Chatbots",
+        description = "Exclui um chatbot especificado através de seu ID."
+    )
     public void destroy(@PathVariable Long id){
         log.info("Chatbot apagada {}.", id);
  
@@ -75,6 +100,10 @@ public class ChatbotController {
  
     // ========== PUT (Atualizar Chatbot) ============
     @PutMapping("{id}")
+    @Operation(
+        summary = "Atualizar Chatbots",
+        description = "Atualiza um chatbot especificado através de seu ID."
+    )
     public Chatbot update(@PathVariable Long id, @RequestBody Chatbot chatbot){
         log.info("Atualizando Chatbot {} para {}", id, chatbot);
  

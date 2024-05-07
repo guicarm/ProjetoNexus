@@ -7,10 +7,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 
 @Entity
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Api {
 
         
@@ -24,12 +31,10 @@ public class Api {
     @NotBlank(message = "{api.codigoChave.notblank}")
     private String codigoChave;
 
-    //TODO - Conversar com professor de BD pra saber se esses atributos fazem sentido.
-    /*
     @NotBlank(message = "{api.dataInicioChave.notblank}")
     private String dataInicioChave;
 
     @NotBlank(message = "{api.dataFimChave.notblank}")
     private String dataFimChave;
-    */
+
 }
