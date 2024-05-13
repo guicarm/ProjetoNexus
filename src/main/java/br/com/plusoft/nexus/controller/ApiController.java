@@ -43,6 +43,10 @@ public class ApiController {
         summary = "Listar API's",
         description = "Retorna um array com todas as API's registradas."
     )
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "API's retornadas com sucesso."),
+        @ApiResponse(responseCode = "400", description = "API's não foram encontradas.")
+    })
     @GetMapping
     public List<Api> index(){
         return repository.findAll();
@@ -59,7 +63,7 @@ public class ApiController {
     )
     @ApiResponses({
         @ApiResponse(responseCode = "201", description = "API criada com sucesso."),
-        @ApiResponse(responseCode = "400", description = "Validação falhou. Verifique o corpo da requisição.")
+        @ApiResponse(responseCode = "400", description = "Requisição inválida, dados ausentes, mal formatados ou API já existente.")
     })
     public Api create(@RequestBody @Valid Api api){
         log.info("API Cadastrada {}", api);
