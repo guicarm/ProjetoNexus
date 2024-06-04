@@ -26,7 +26,6 @@
 - Gustavo: DevOps e .NET
 - Matheus: QA, Disruptive Technologies IOT e .NET
 
-<br>
 --------------------------------------------------
 <h3>Como Rodar a Aplicação </h3>
 
