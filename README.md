@@ -21,7 +21,7 @@
 
 ### Atribuições
 - Guilherme: Java e .NET
-- Amorgan: SQL e .NET
+- Amorgan: QA, SQL e .NET
 - Erick: Mobile e .NET
 - Gustavo: DevOps e .NET
 - Matheus: QA, Disruptive Technologies IOT e .NET
