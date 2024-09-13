@@ -1,14 +1,22 @@
 package br.com.plusoft.nexus.usuario.dto;
-
-import java.time.LocalDateTime;
+import br.com.plusoft.nexus.usuario.Usuario;
 
 public record UsuarioResponse (
-        
-        Long id,
-        String name,
-        String bio,
+        Long id, 
+        String nome,
         String email,
-        LocalDateTime createdAt
+        String senha,
+        String tipo
+){
+    public static UsuarioResponse from(Usuario usuario) {
+        return new UsuarioResponse(
+                usuario.getId(),
+                usuario.getNome(),
+                usuario.getEmail(),
+                usuario.getSenha(),
+                usuario.getTipo()
+        );
+    }
 
-){}
+}
     
