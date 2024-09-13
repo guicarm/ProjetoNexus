@@ -1,8 +1,6 @@
-package br.com.plusoft.nexus.repository;
+package br.com.plusoft.nexus.produto;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import br.com.plusoft.nexus.model.Produto;
 
 public interface ProdutoRepository extends JpaRepository<Produto, Long>{
     

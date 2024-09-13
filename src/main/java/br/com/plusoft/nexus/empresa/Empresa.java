@@ -1,4 +1,4 @@
-package br.com.plusoft.nexus.model;
+package br.com.plusoft.nexus.empresa;
 
 import org.hibernate.validator.constraints.br.CNPJ;
 

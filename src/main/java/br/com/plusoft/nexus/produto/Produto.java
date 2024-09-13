@@ -1,4 +1,4 @@
-package br.com.plusoft.nexus.model;
+package br.com.plusoft.nexus.produto;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

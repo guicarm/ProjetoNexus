@@ -1,8 +1,6 @@
-package br.com.plusoft.nexus.repository;
+package br.com.plusoft.nexus.chatbot;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import br.com.plusoft.nexus.model.Chatbot;
 
 public interface ChatbotRepository extends JpaRepository<Chatbot, Long> {
     

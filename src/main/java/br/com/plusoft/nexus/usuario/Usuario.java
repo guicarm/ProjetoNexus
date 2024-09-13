@@ -1,4 +1,4 @@
-package br.com.plusoft.nexus.model;
+package br.com.plusoft.nexus.usuario;
 
 import br.com.plusoft.nexus.validation.TipoUsuario;
 import jakarta.persistence.Entity;

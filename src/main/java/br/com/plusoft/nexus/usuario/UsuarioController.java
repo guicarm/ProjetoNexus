@@ -1,10 +1,10 @@
-package br.com.plusoft.nexus.controller;
-
-import java.util.List;
+package br.com.plusoft.nexus.usuario;
 
 import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 import static org.springframework.http.HttpStatus.NO_CONTENT;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +19,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import br.com.plusoft.nexus.model.Empresa;
-import br.com.plusoft.nexus.repository.EmpresaRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -29,52 +27,52 @@ import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequestMapping("empresa")
+@RequestMapping("usuario")
 @Slf4j
-@Tag(name = "Empresas")
-public class EmpresaController {
+@Tag(name = "Usuários")
+public class UsuarioController {
    
  
     @Autowired // Injeção de Dependência
-    EmpresaRepository repository;
-   
-// ========== GET(Listar Empresa) ============
+    UsuarioRepository repository;
+
+
+    // ========== GET(Listar Usuarios) ============
     @GetMapping
     @Operation(
-        summary = "Listar Empresas",
-        description = "Retorna um array com todas as empresas registradas."
+        summary = "Listar Usuários",
+        description = "Retorna um array com todos usuários registrados."
     )
-    public List<Empresa> index(){
+    public List<Usuario> index(){
         return repository.findAll();
     }
-
  
  
-    // ========== POST(Cadastrar Empresa) ============
+    // ========== POST(Cadastrar Usuario) ============
     @PostMapping
     @ResponseStatus(CREATED)
     @Operation(
-        summary = "Cadastrar Empresas",
-        description = "Cadastra uma empresa especificada através de seu ID."
+        summary = "Cadastrar Usuários",
+        description = "Cadastra um usuário especificado através de seu ID."
     )
     @ApiResponses({
-        @ApiResponse(responseCode = "201", description = "Empresa criada com sucesso."),
+        @ApiResponse(responseCode = "201", description = "Usuário criado com sucesso."),
         @ApiResponse(responseCode = "400", description = "Validação falhou. Verifique o corpo da requisição.")
     })
-    public Empresa create(@RequestBody @Valid Empresa empresa){
-        log.info("Empresa Cadastrada {}", empresa);
-        return repository.save(empresa);
+    public Usuario create(@RequestBody @Valid Usuario usuario){
+        log.info("Usuario Cadastrado {}", usuario);
+        return repository.save(usuario);
     }
  
  
-    // ========== GET(Detalhar Empresa) ============
+    // ========== GET(Detalhar Usuario) ============
     @GetMapping("{id}")
     @Operation(
-        summary = "Detalhar Empresas",
-        description = "Detalha uma empresa especificada através de seu ID."
+        summary = "Detalhar Usuários",
+        description = "Detalha um usuário especificado através de seu ID."
     )
-    public ResponseEntity<Empresa> show(@PathVariable Long id){
-        log.info("buscando Empresa com id {}", id);
+    public ResponseEntity<Usuario> show(@PathVariable Long id){
+        log.info("buscando usuario com id {}", id);
  
             return repository
                             .findById(id)
@@ -82,46 +80,47 @@ public class EmpresaController {
                             .orElse(ResponseEntity.notFound().build());
     }
  
-    // ========== DELETE (Excluir Empresa) ============
+
+    // ========== DELETE (Excluir Usuario) ============
     @DeleteMapping("{id}")
     @ResponseStatus(NO_CONTENT)
     @Operation(
-        summary = "Excluir Empresas",
-        description = "Exclui uma empresa especificada através de seu ID."
+        summary = "Excluir Usuários",
+        description = "Exclui um usuário especificado através de seu ID."
     )
     public void destroy(@PathVariable Long id){
-        log.info("Empresa apagada {}.", id);
+        log.info("Usuario apagado {}.", id);
  
-        verificarSeEmpresaExiste(id);
+        verificarSeUsuarioExiste(id);
         repository.deleteById(id);
                    
     }
  
  
-    // ========== PUT (Atualizar Empresa) ============
+    // ========== PUT (Atualizar Usuario) ============
     @PutMapping("{id}")
     @Operation(
-        summary = "Atualizar Empresas",
-        description = "Atualiza uma empresa especificada através de seu ID."
+        summary = "Atualizar Usuários",
+        description = "Atualiza um usuário especificado através de seu ID."
     )
-    public Empresa update(@PathVariable Long id, @RequestBody Empresa empresa){
-        log.info("Atualizando Empresa {} para {}", id, empresa);
+    public Usuario update(@PathVariable Long id, @RequestBody Usuario usuario){
+        log.info("Atualizando usuario {} para {}", id, usuario);
  
-        verificarSeEmpresaExiste(id);
-        empresa.setId(id);
-        return repository.save(empresa);
+        verificarSeUsuarioExiste(id);
+        usuario.setId(id);
+        return repository.save(usuario);
  
     }
  
 
- 
-  // ==== MÉTODO VERIFICAR SE A Empresa EXISTE ========
- private void verificarSeEmpresaExiste(Long id) {
-        repository
+
+  // ==== MÉTODO VERIFICAR SE USUARIO EXISTE ========
+ private void verificarSeUsuarioExiste(Long id) {
+                repository
                 .findById(id)
                 .orElseThrow(() -> new ResponseStatusException(
                                             NOT_FOUND,
-                                            "Não existe Empresa com o ID informado.")
+                                            "Não existe usuario com o ID informado.")
                             );
     }
-}  
+}

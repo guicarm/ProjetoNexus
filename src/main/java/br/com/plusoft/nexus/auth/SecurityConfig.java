@@ -1,4 +1,4 @@
-package br.com.plusoft.nexus.config;
+package br.com.plusoft.nexus.auth;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

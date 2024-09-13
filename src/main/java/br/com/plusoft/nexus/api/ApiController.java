@@ -1,4 +1,4 @@
-package br.com.plusoft.nexus.controller;
+package br.com.plusoft.nexus.api;
 
 import java.util.List;
 
@@ -19,8 +19,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import br.com.plusoft.nexus.model.Api;
-import br.com.plusoft.nexus.repository.ApiRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
