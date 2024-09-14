@@ -1,4 +1,4 @@
-package br.com.plusoft.nexus.api;
+package br.com.plusoft.nexus.apis;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
