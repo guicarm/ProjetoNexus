@@ -18,12 +18,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.util.UriComponentsBuilder;
 
+import br.com.plusoft.nexus.usuario.dto.UsuarioRequest;
+import br.com.plusoft.nexus.usuario.dto.UsuarioResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
@@ -33,6 +35,9 @@ import lombok.extern.slf4j.Slf4j;
 public class UsuarioController {
    
  
+    @Autowired
+    UsuarioService usuarioService;
+
     @Autowired // Injeção de Dependência
     UsuarioRepository repository;
 
@@ -59,9 +64,17 @@ public class UsuarioController {
         @ApiResponse(responseCode = "201", description = "Usuário criado com sucesso."),
         @ApiResponse(responseCode = "400", description = "Validação falhou. Verifique o corpo da requisição.")
     })
-    public Usuario create(@RequestBody @Valid Usuario usuario){
-        log.info("Usuario Cadastrado {}", usuario);
-        return repository.save(usuario);
+    public ResponseEntity<UsuarioResponse> create(@RequestBody UsuarioRequest usuarioRequest, UriComponentsBuilder uriBuilder){
+        var usuario = usuarioService.create(usuarioRequest.toModel());
+
+        var uri = uriBuilder
+                    .path("/usuario/{id}")
+                    .buildAndExpand(usuario.getId())
+                    .toUri();
+
+        return ResponseEntity
+                .created(uri)
+                .body(UsuarioResponse.from(usuario));
     }
  
  
