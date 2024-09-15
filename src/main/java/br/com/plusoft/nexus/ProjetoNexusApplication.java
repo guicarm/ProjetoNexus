@@ -15,7 +15,7 @@ import io.swagger.v3.oas.annotations.info.Info;
 @OpenAPIDefinition(
 	info = @Info(
 		title = "Nexus API",
-		version =  "1.0.0",
+		version =  "3.0.0",
 		description = "API Rest do Projeto Nexus",
 		contact = @Contact(name = "Nexus Team", url = "https://github.com/fiap-nexus")	
 	)
