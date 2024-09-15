@@ -21,22 +21,22 @@ import lombok.NoArgsConstructor;
 public class Empresa {
     
     
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
 
     @NotBlank(message = "{empresa.razaoSocial.notblank}")
     @Size(min = 3, max = 255, message="{empresa.razaoSocial.size}")
-    private String razaoSocial;
+     String razaoSocial;
 
 
     @Size(min = 3, max = 255, message="{empresa.nomeFantasia.size}")
-    private String nomeFantasia;
+     String nomeFantasia;
 
     @NotBlank(message = "{empresa.areaDeAtuacao.notblank}")
     @Size(min = 3, max = 100, message="{empresa.areaDeAtuacao.size}")
-    private String areaDeAtuacao;       // Varejo, Saúde, Beleza, Tecnologia, Etc.
+     String areaDeAtuacao;       // Varejo, Saúde, Beleza, Tecnologia, Etc.
 
     @NotBlank(message = "{empresa.cnpj.notblank}")
     @CNPJ
-    private String cnpj;
+     String cnpj;
 }

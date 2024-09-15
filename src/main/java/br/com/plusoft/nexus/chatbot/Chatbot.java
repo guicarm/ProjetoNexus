@@ -22,12 +22,12 @@ public class Chatbot {
     
        
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+     Long id;
 
     @NotBlank(message = "{chatbot.nome.notblank}")
     @Size(min = 3, max = 100, message="{chatbot.nome.size}")
-    private String nome;
+     String nome;
 
     @NotBlank(message = "{chatbot.dataCriacao.notblank}")
-    private String dataCriacao;
+     String dataCriacao;
 }

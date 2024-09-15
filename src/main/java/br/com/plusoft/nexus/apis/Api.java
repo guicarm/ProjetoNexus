@@ -21,20 +21,20 @@ import lombok.NoArgsConstructor;
 public class Api {
 
         
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
 
     @NotBlank(message = "{api.nome.notblank}")
     @Size(min = 3, max = 100, message="{api.nome.size}") 
-    private String nome;
+     String nome;
 
     @NotBlank(message = "{api.codigoChave.notblank}")
-    private String codigoChave;
+     String codigoChave;
 
     @NotBlank(message = "{api.dataInicioChave.notblank}")
-    private String dataInicioChave;
+     String dataInicioChave;
 
     @NotBlank(message = "{api.dataFimChave.notblank}")
-    private String dataFimChave;
+     String dataFimChave;
 
 }
