@@ -56,12 +56,13 @@ git clone https://github.com/guicarm/ProjetoNexus
 - [Docker](https://www.docker.com/)
 - [Figma](https://www.figma.com/file/d5rDjubNjdvIn1madq8DZd/Challenge?type=design&node-id=0%3A1&mode=design&t=9i6UZdLvgFCGnHWx-1)
 - [Insomnia](https://insomnia.rest/download)
+- [Mail Trap](https://mailtrap.io/pt/)
 
 <br/>
 
 ## 🧾 Funcionalidades
 
-- [x] Sistema de login/cadastro totalmente funcional.
+- [x] Sistema de login/cadastro totalmente funcional (Autentificação com Token JWT).
 - [x] Lidar com o tipo de usuário (cliente/funcionário).
 - [x] CRUD de usuários.
 - [x] CRUD de produtos.
@@ -79,7 +80,7 @@ git clone https://github.com/guicarm/ProjetoNexus
 
 <br/>
 
-## 🌐 [Arquivo JSON Insomnia](./documents/Insomnia_2024-05-07.json) 🌐
+## 🌐 [Arquivo JSON Insomnia](./documents/Insomnia_2024-09-15.json) 🌐
 
 <br/>
 
