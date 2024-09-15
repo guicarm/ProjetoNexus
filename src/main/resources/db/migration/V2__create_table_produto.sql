@@ -1,11 +1,11 @@
 CREATE TABLE T_NX_PRODUTO (
     id BIGINT NOT NULL AUTO_INCREMENT,
-    tp_produto VARCHAR2(50) NOT NULL,
-    nm_produto VARCHAR2(50) NOT NULL,
-    nm_marca VARCHAR2(50) NOT NULL,
-    nm_modelo VARCHAR2(50) NOT NULL,
-    nr_quantidade NUMBER(10,2) NOT NULL,
-    vl_produto NUMBER(10,2) NOT NULL,
+    tp_produto VARCHAR2(50),
+    nm_produto VARCHAR2(50),
+    nm_marca VARCHAR2(50),
+    nm_modelo VARCHAR2(50),
+    nr_quantidade NUMBER(10,2),
+    vl_produto NUMBER(10,2),
     ds_produto VARCHAR2(100),
     PRIMARY KEY (id)
 );
