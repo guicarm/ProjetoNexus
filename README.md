@@ -88,9 +88,9 @@ git clone https://github.com/guicarm/ProjetoNexus
 
 <h3> Endpoints de documentação </h3>
 
-- [Link para o Banco de dados H2](localhost:8080/database):
+- [Link para o Banco de dados H2](localhost:8080/db):
 ```
-localhost:8080/database
+localhost:8080/db
 ```
 
 - [Link para a documentação Swagger do projeto](localhost:8080/docs):
