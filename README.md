@@ -16,11 +16,11 @@
 
 <h3>Integrantes</h3>
 
-- Matheus O.A.C Silva - RM 98502
-- Amorgan M. Lopes - RM 98552
-- Guilherme C. de Matos - RM 98874
-- Gustavo G. da Silva - RM 99585
-- Erick K. da Silva - RM 550371
+- [Matheus O.A.C Silva](https://github.com/mathabes) - RM 98502
+- [Amorgan M. Lopes](https://github.com/GanLopes) - RM 98552
+- [Guilherme C. de Matos](https://github.com/guicarm) - RM 98874
+- [Gustavo G. da Silva](https://github.com/GuGodoi7) - RM 99585
+- [Erick K. da Silva](https://github.com/ErickKS) - RM 550371
 
 ### Atribuições
 - Guilherme: Java e .NET
@@ -44,6 +44,12 @@
 git clone https://github.com/guicarm/ProjetoNexus
 ```
 
+- Abra a pasta do projeto no seu terminal e digite:
+```bash
+code .
+```
+
+- Agora com o Visual Studio aberto, rode a aplicação à partir do arquivo ```ProjetoNexusApplication.java```.
 --------------------------------------------------
 
 ## 📚 Projeto 
