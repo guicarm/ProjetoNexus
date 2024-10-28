@@ -18,8 +18,10 @@ public class SecurityConfig {
             .requestMatchers(HttpMethod.POST, "/login").permitAll()
             .requestMatchers(HttpMethod.POST, "/usuario").permitAll()
             .requestMatchers("/docs/**", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
+            .requestMatchers("/admin/**").hasRole("funcionario")   
             .anyRequest().authenticated()
         );
+
         http.csrf(csrf -> csrf.disable());
         http.addFilterBefore(authorizationFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
