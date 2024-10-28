@@ -7,7 +7,7 @@
     <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#-diagrama">Diagrama</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="#-%EF%B8%8F-spring-boot-admin">Spring Admin</a>
+    <a href="#%EF%B8%8F-spring-boot-admin">Spring Admin</a>
 </p>
 
 <p align="center"> 
