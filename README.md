@@ -107,3 +107,10 @@ localhost:8080/db
 localhost:8080/docs
 ```
 
+## 🛠️ Spring Boot Admin
+
+- [Link para o Spring Boot Admin](localhost:9090):
+```
+localhost:9090
+```
+
