@@ -34,11 +34,11 @@ import lombok.extern.slf4j.Slf4j;
 @Tag(name = "Usuários")
 public class UsuarioController {
    
- 
+    // Injeção de Dependências
     @Autowired
     UsuarioService usuarioService;
 
-    @Autowired // Injeção de Dependência
+    @Autowired 
     UsuarioRepository repository;
 
 

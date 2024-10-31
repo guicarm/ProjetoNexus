@@ -26,6 +26,7 @@ public class UsuarioService  {
         return usuarioRepository.findAll();
     }
 
+    // CREATE
     public Usuario create(Usuario usuario){
         usuario.setSenha(
                 passwordEncoder.encode(usuario.getSenha())
