@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import br.com.plusoft.nexus.mail.MailService;
 
 @Service
-public class UsuarioService  {
+public class UsuarioService {
 
     @Autowired
     UsuarioRepository usuarioRepository;
@@ -20,20 +20,21 @@ public class UsuarioService  {
     @Autowired
     private MailService mailService;
 
-
     // GET - FINDALL
-    public List<Usuario> findAll(){
+    public List<Usuario> findAll() {
         return usuarioRepository.findAll();
     }
 
     // CREATE
-    public Usuario create(Usuario usuario){
+    public Usuario create(Usuario usuario) {
         usuario.setSenha(
-                passwordEncoder.encode(usuario.getSenha())
-        );
+                passwordEncoder.encode(usuario.getSenha()));
 
         mailService.sendWelcomeMail(usuario);
         return usuarioRepository.save(usuario);
     }
 
+    public List<Usuario> getRanking() {
+        return usuarioRepository.findAllByOrderByScoreDesc();
+    }
 }
