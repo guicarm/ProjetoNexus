@@ -33,8 +33,4 @@ public class UsuarioService {
         mailService.sendWelcomeMail(usuario);
         return usuarioRepository.save(usuario);
     }
-
-    public List<Usuario> getRanking() {
-        return usuarioRepository.findAllByOrderByScoreDesc();
-    }
 }

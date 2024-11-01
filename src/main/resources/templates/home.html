@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+  <style>
+    body {
+      background-color: #f5f5f5;
+    }
+    .hero {
+      background-image: url('https://via.placeholder.com/1600x600/00BFFF/FFFFFF/?text=Bem-vindo!');
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+    .footer {
+      background-color: #333;
+      color: #fff;
+      padding: 1.5rem 0;
+    }
+    .button {
+      margin: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar is-primary">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+          <strong>N E X U S</strong>
+        </a>
+        <span class="navbar-burger" data-target="navbarMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#">Home</a>
+          <a class="navbar-item" href="#">Serviços</a>
+          <a class="navbar-item" href="#">Sobre Nós</a>
+          <a class="navbar-item" href="#">Contato</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero is-medium">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h2 th:text="${msgBemVindo}" class="title"></h2>
+        <h1 class="title">Bem-vindo ao Nexus.</h1>
+        <h2 class="subtitle">Chatbots que impulsionam seu negócio.</h2>
+        <div class="buttons is-centered">
+          <a href="#sobre" class="button is-light is-large">Sobre</a>
+          <a href="#contato" class="button is-danger is-large">Entre em Contato</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <h2 class="title has-text-centered mt-6">Nossos Serviços</h2>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-multiline">
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://via.placeholder.com/400x300" alt="Serviço 1">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-4">Serviço 1</p>
+              <p class="content">Descrição breve do serviço 1 oferecido pela empresa.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://via.placeholder.com/400x300" alt="Serviço 2">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-4">Serviço 2</p>
+              <p class="content">Descrição breve do serviço 2 oferecido pela empresa.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-one-third">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="https://via.placeholder.com/400x300" alt="Serviço 3">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-4">Serviço 3</p>
+              <p class="content">Descrição breve do serviço 3 oferecido pela empresa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Nexus</strong> © 2024 - Todos os direitos reservados.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
