@@ -1,23 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Orbitron:wght@500&display=swap" rel="stylesheet">
-
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus</title>
 
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <link rel="stylesheet" href="/src/main/resources/static/css/styles.css">
+
+    <style>
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+            border: 2px solid #2b2c2e; 
+            background-color: #2b2c2e; 
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+
+        .marquee {
+            display: inline-block;
+            padding-left: 100%; 
+            animation: marquee 30s linear infinite; 
+        }
+
+        .marquee-item {
+            display: inline-block;
+            margin-right: 50px; 
+            font-size: 1.5rem;
+            color: #ffffff; 
+            text-align: center; 
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-100%, 0);
+            }
+        }
+    </style>
 </head>
 <body>
-
 
     <header>
         <nav class="navbar is-dark">
@@ -26,17 +58,13 @@
                     <a class="navbar-item" href="#">
                         <img src="/img/nexus-logo.png" alt="nexus-logo">
                     </a>
-                    <span class="navbar-burger" data-target="navbarMenu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
                 </div>
                 <div id="navbarMenu" class="navbar-menu">
                     <div class="navbar-end">
                         <a class="navbar-item" href="#sobre">Sobre</a>
                         <a class="navbar-item" href="#servicos">Serviços</a>
-                        <a class="navbar-item" href="#contato">Contato</a>
+                        <a class="navbar-item" href="#parceiros">Empresas Parceiras</a>
+                        <a class="navbar-item" href="https://nexus-beacon.vercel.app/time.html" target="_blank">Contato</a>
                     </div>
                 </div>
             </div>
@@ -45,64 +73,99 @@
         <div class="hero is-medium is-primary">
             <div class="hero-body">
                 <div class="container has-text-centered">
-                    <h1 class="title">Nexus</h1>
-                    <h2 class="subtitle">Chatbots que impulsionam seu negócio.</h2>
+                    <h2 class="title" th:text="${msgBemVindo}">Bem-vindo ao Nexus.</h2>
                     <a href="#sobre" class="button is-light is-large">Descubra mais</a>
                 </div>
             </div>
         </div>
     </header>
 
-
-    <section class="section">
+    <section id="sobre" class="section">
         <div class="container">
-            <h2 class="title has-text-centered">Nossos Serviços</h2>
-            <div class="columns is-multiline">
-                <div class="column is-one-third">
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                                <img src="https://via.placeholder.com/400x300" alt="Serviço 1">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <p class="title is-4">Serviço 1</p>
-                            <p class="content">Descrição breve do serviço 1 oferecido pela empresa.</p>
-                        </div>
-                    </div>
+            <div class="columns is-vcentered">
+                <div class="column is-half">
+                    <figure class="image">
+                        <img src="/img/nexus-logo-white.png" alt="Imagem do Nexus">
+                    </figure>
                 </div>
-
-                <div class="column is-one-third">
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                                <img src="https://via.placeholder.com/400x300" alt="Serviço 2">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <p class="title is-4">Serviço 2</p>
-                            <p class="content">Descrição breve do serviço 2 oferecido pela empresa.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="column is-one-third">
-                    <div class="card">
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                                <img src="https://via.placeholder.com/400x300" alt="Serviço 3">
-                            </figure>
-                        </div>
-                        <div class="card-content">
-                            <p class="title is-4">Serviço 3</p>
-                            <p class="content">Descrição breve do serviço 3 oferecido pela empresa.</p>
-                        </div>
+                <div class="column is-half">
+                    <h2 class="title has-text-centered">Sobre o Nexus</h2>
+                    <div class="content" style="font-size: 1.25rem;">
+                        <p>Bem-vindo ao Nexus. O projeto consiste no desenvolvimento de um Chatbot funcional que utiliza o WhatsApp como plataforma principal. Esse Chatbot será capaz de se integrar a diversos sistemas externos, como APIs de inteligência artificial, e-commerce, e sistemas de recomendações. Isso permitirá oferecer um atendimento personalizado e eficaz aos clientes e usuários.</p>
+                        <p>O público-alvo do projeto Nexus são empresas que buscam soluções inovadoras para melhorar o atendimento ao cliente, aumentando assim, sua satisfação e consequentemente otimizando suas operações comerciais.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <section id="servicos" class="section">
+      <div class="container">
+          <h2 class="title has-text-centered">Nossos Serviços</h2>
+          <div class="columns is-multiline">
+              <div class="column is-one-third">
+                  <div class="card">
+                      <div class="card-image">
+                          <figure class="image is-4by3">
+                              <img src="/img/nexus-farma.png" alt="Serviço Farmácia">
+                          </figure>
+                      </div>
+                      <div class="card-content">
+                          <p class="title is-4">Farmácia</p>
+                          <p class="content">Solicite seus medicamentos e produtos de saúde diretamente pelo WhatsApp, com entrega rápida e prática.</p>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="column is-one-third">
+                  <div class="card">
+                      <div class="card-image">
+                          <figure class="image is-4by3">
+                              <img src="/img/nexus-market.jpg" alt="Serviço Mercado">
+                          </figure>
+                      </div>
+                      <div class="card-content">
+                          <p class="title is-4">Mercado</p>
+                          <p class="content">Faça suas compras de supermercado pelo WhatsApp e receba os produtos na sua casa de forma rápida e conveniente.</p>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="column is-one-third">
+                  <div class="card">
+                      <div class="card-image">
+                          <figure class="image is-4by3">
+                              <img src="/img/nexus-seguro.jpg" alt="Serviço de Seguros">
+                          </figure>
+                      </div>
+                      <div class="card-content">
+                          <p class="title is-4">Contratação de Seguros</p>
+                          <p class="content">Contrate seguros de forma fácil e rápida pelo WhatsApp, com suporte para tirar todas as suas dúvidas.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- EMPRESAS PARCEIRAS: PUXA AS EMPRESAS DO BANCO DE DADOS -->
+    <section id="parceiros" class="section">
+        <div class="container">
+            <h2 class="title has-text-centered">Empresas Parceiras</h2>
+            <div class="marquee-container">
+                <div class="marquee">
+                    <div class="marquee-item" th:each="empresa : ${empresasParceiras}" th:text="${empresa.nomeFantasia}">Nome da Empresa</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section has-text-centered">
+        <div class="container">
+            <h2 class="title">Teste nosso Chatbot!</h2>
+            <a href="https://nexus-beacon.vercel.app/index.html" target="_blank" class="button is-primary is-large">Clique aqui para testar!</a>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="content has-text-centered">
@@ -111,6 +174,5 @@
             </p>
         </div>
     </footer>
-
 </body>
 </html>

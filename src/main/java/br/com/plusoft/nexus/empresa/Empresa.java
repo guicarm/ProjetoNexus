@@ -2,10 +2,12 @@ package br.com.plusoft.nexus.empresa;
 
 import org.hibernate.validator.constraints.br.CNPJ;
 
+import jakarta.persistence.Column; // Importando a anotação Column
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -18,25 +20,30 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "T_NX_EMPRESA")
 public class Empresa {
-    
-    
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     @NotBlank(message = "{empresa.razaoSocial.notblank}")
-    @Size(min = 3, max = 255, message="{empresa.razaoSocial.size}")
-     String razaoSocial;
+    @Size(min = 3, max = 50, message = "{empresa.razaoSocial.size}") 
+    @Column(name = "nm_razao_social", nullable = false) 
+    String razaoSocial;
 
-
-    @Size(min = 3, max = 255, message="{empresa.nomeFantasia.size}")
-     String nomeFantasia;
+    @Size(min = 3, max = 50, message = "{empresa.nomeFantasia.size}")
+    @Column(name = "nm_fantasia") 
+    String nomeFantasia;
 
     @NotBlank(message = "{empresa.areaDeAtuacao.notblank}")
-    @Size(min = 3, max = 100, message="{empresa.areaDeAtuacao.size}")
-     String areaDeAtuacao;       // Varejo, Saúde, Beleza, Tecnologia, Etc.
+    @Size(min = 3, max = 50, message = "{empresa.areaDeAtuacao.size}")
+    @Column(name = "tp_area_atuacao", nullable = false) 
+    String areaDeAtuacao; 
 
     @NotBlank(message = "{empresa.cnpj.notblank}")
     @CNPJ
-     String cnpj;
+    @Size(max = 15, message = "{empresa.cnpj.size}") 
+    @Column(name = "nr_cnpj", nullable = false) 
+    String cnpj;
 }
