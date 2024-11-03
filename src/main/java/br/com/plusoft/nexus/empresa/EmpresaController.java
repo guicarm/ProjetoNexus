@@ -1,11 +1,12 @@
 package br.com.plusoft.nexus.empresa;
 
-import java.util.List;
-
 import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.NOT_FOUND;
 import static org.springframework.http.HttpStatus.NO_CONTENT;
 
+import java.util.List;
+
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -31,23 +32,23 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Tag(name = "Empresas")
 public class EmpresaController {
-   
- 
-    @Autowired // Injeção de Dependência
+
+    @Autowired
     EmpresaRepository repository;
-   
-// ========== GET(Listar Empresa) ============
+
+    @Autowired
+    RabbitTemplate rabbitTemplate;
+
+    // ========== GET(Listar Empresa) ============
     @GetMapping
     @Operation(
         summary = "Listar Empresas",
         description = "Retorna um array com todas as empresas registradas."
     )
-    public List<Empresa> index(){
+    public List<Empresa> index() {
         return repository.findAll();
     }
 
- 
- 
     // ========== POST(Cadastrar Empresa) ============
     @PostMapping
     @ResponseStatus(CREATED)
@@ -59,27 +60,31 @@ public class EmpresaController {
         @ApiResponse(responseCode = "201", description = "Empresa criada com sucesso."),
         @ApiResponse(responseCode = "400", description = "Validação falhou. Verifique o corpo da requisição.")
     })
-    public Empresa create(@RequestBody @Valid Empresa empresa){
+    public Empresa create(@RequestBody @Valid Empresa empresa) {
         log.info("Empresa Cadastrada {}", empresa);
-        return repository.save(empresa);
+        Empresa savedEmpresa = repository.save(empresa);
+        
+        // Enviando mensagem para o RabbitMQ após cadastrar a empresa
+        rabbitTemplate.convertAndSend("empresa-queue","Empresa cadastrada: " + empresa.nomeFantasia);
+
+        return savedEmpresa;
     }
- 
- 
+
     // ========== GET(Detalhar Empresa) ============
     @GetMapping("{id}")
     @Operation(
         summary = "Detalhar Empresas",
         description = "Detalha uma empresa especificada através de seu ID."
     )
-    public ResponseEntity<Empresa> show(@PathVariable Long id){
-        log.info("buscando Empresa com id {}", id);
- 
-            return repository
-                            .findById(id)
-                            .map(ResponseEntity::ok)
-                            .orElse(ResponseEntity.notFound().build());
+    public ResponseEntity<Empresa> show(@PathVariable Long id) {
+        log.info("Buscando Empresa com id {}", id);
+
+        return repository
+            .findById(id)
+            .map(ResponseEntity::ok)
+            .orElse(ResponseEntity.notFound().build());
     }
- 
+
     // ========== DELETE (Excluir Empresa) ============
     @DeleteMapping("{id}")
     @ResponseStatus(NO_CONTENT)
@@ -87,39 +92,34 @@ public class EmpresaController {
         summary = "Excluir Empresas",
         description = "Exclui uma empresa especificada através de seu ID."
     )
-    public void destroy(@PathVariable Long id){
+    public void destroy(@PathVariable Long id) {
         log.info("Empresa apagada {}.", id);
- 
+
         verificarSeEmpresaExiste(id);
         repository.deleteById(id);
-                   
     }
- 
- 
+
     // ========== PUT (Atualizar Empresa) ============
     @PutMapping("{id}")
     @Operation(
         summary = "Atualizar Empresas",
         description = "Atualiza uma empresa especificada através de seu ID."
     )
-    public Empresa update(@PathVariable Long id, @RequestBody Empresa empresa){
+    public Empresa update(@PathVariable Long id, @RequestBody Empresa empresa) {
         log.info("Atualizando Empresa {} para {}", id, empresa);
- 
+
         verificarSeEmpresaExiste(id);
         empresa.setId(id);
         return repository.save(empresa);
- 
     }
- 
 
- 
-  // ==== MÉTODO VERIFICAR SE A Empresa EXISTE ========
- private void verificarSeEmpresaExiste(Long id) {
+    // ==== MÉTODO VERIFICAR SE A Empresa EXISTE ========
+    private void verificarSeEmpresaExiste(Long id) {
         repository
-                .findById(id)
-                .orElseThrow(() -> new ResponseStatusException(
-                                            NOT_FOUND,
-                                            "Não existe Empresa com o ID informado.")
-                            );
+            .findById(id)
+            .orElseThrow(() -> new ResponseStatusException(
+                NOT_FOUND,
+                "Não existe Empresa com o ID informado.")
+            );
     }
-}  
+}

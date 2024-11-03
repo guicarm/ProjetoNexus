@@ -1,8 +1,6 @@
 package br.com.plusoft.nexus.empresa;
 
-import org.hibernate.validator.constraints.br.CNPJ;
-
-import jakarta.persistence.Column; // Importando a anotação Column
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -42,7 +40,6 @@ public class Empresa {
     String areaDeAtuacao; 
 
     @NotBlank(message = "{empresa.cnpj.notblank}")
-    @CNPJ
     @Size(max = 15, message = "{empresa.cnpj.size}") 
     @Column(name = "nr_cnpj", nullable = false) 
     String cnpj;
