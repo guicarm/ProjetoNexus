@@ -12,7 +12,8 @@
 
 <p align="center"> 
     <a href="https://youtu.be/e6-Bkei8G5M?si=_ofCC3A79gf6vVgP">Vídeo PITCH de apresentação do projeto</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-    <a href="https://youtu.be/Yy-ZdJacnWA">Vídeo de demonstração do projeto funcionando</a>
+    <a href="https://youtu.be/Yy-ZdJacnWA">Vídeo de demonstração do projeto</a> (Sprint 3)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="">Vídeo de demonstração do projeto</a>  (Sprint 4)
 </p>
 
 <h3>Integrantes</h3>
