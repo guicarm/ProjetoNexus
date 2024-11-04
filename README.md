@@ -11,7 +11,7 @@
 </p>
 
 <p align="center"> 
-    <a href="https://youtu.be/e6-Bkei8G5M?si=_ofCC3A79gf6vVgP">Vídeo PITCH de apresentação do projeto</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="https://youtu.be/e6-Bkei8G5M?si=_ofCC3A79gf6vVgP">PITCH de apresentação do projeto</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="https://youtu.be/Yy-ZdJacnWA">Vídeo de demonstração</a> (Sprint 3)&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="">Vídeo de demonstração</a> (Sprint 4)
 </p>
