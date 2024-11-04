@@ -25,11 +25,11 @@
 - [Erick K. da Silva](https://github.com/ErickKS) - RM 550371
 
 ### Atribuições
-- Guilherme: Java e .NET
-- Amorgan: QA, SQL e .NET
-- Erick: Mobile e .NET
-- Gustavo: DevOps e .NET
-- Matheus: QA, Disruptive Technologies IOT e .NET
+- Guilherme: Java, Database, DevOps 
+- Amorgan: QA, Database, DevOps
+- Erick: Mobile, .NET
+- Gustavo: DevOps, Database, .NET
+- Matheus: QA, Disruptive Technologies IOT, .NET, Database
 
 --------------------------------------------------
 <h3>Como Rodar a Aplicação </h3>
@@ -38,8 +38,15 @@
 
 - [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/downloads/#java11) instalado em seu sistema.
 - [Visual Studio Code (VSCode)](https://code.visualstudio.com) instalado em seu sistema.
+- [Docker](https://www.docker.com) instalado em seu sistema.
 
 <h4>Passos para Executar a Aplicação</h4> 
+
+- Inicie o Docker Desktop:
+```
+start "" "C:\Program Files\Docker\Docker\Docker Desktop.exe"
+```
+`⚠️ O local de instalação do Docker pode variar de acordo com a máquina.`
 
 - Clonar o Repositório:
 ```bash
@@ -49,6 +56,11 @@ git clone https://github.com/guicarm/ProjetoNexus
 - Abra a pasta do projeto no seu terminal e digite:
 ```bash
 code .
+```
+
+- Abra o terminal do VSCode com `Ctrl + "` e rode o arquivo `docker-compose.yml` com o comando:
+```bash
+docker-compose up -d
 ```
 
 - Agora com o Visual Studio aberto, rode a aplicação à partir do arquivo ```ProjetoNexusApplication.java```.
@@ -108,6 +120,14 @@ localhost:8080/db
 ```
 localhost:8080/docs
 ```
+
+- [Link para a interface de manutenção do RabbitMQ](localhost:15672):
+```
+localhost:15672
+```
+username: `nexus`
+<br>
+password: `nexus123`
 
 ## 🛠️ Spring Boot Admin
 
